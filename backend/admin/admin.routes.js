@@ -1,0 +1,25 @@
+const express    = require('express');
+const router     = express.Router();
+const auth       = require('../middleware/auth');
+const { isAdmin, isSuperAdmin } = require('./admin.middleware');
+const controller = require('./admin.controller');
+
+router.post('/register', controller.registerAdmin);
+router.use(auth, isAdmin);
+router.get('/dashboard', controller.getDashboardStats);
+router.get('/users',        controller.getAllUsers);
+router.get('/users/:id',    controller.getUserById);
+router.put('/users/:id',    controller.updateUser);
+router.delete('/users/:id', isSuperAdmin, controller.deleteUser);
+router.get('/verifications/pending', controller.getPendingVerifications);
+router.post('/verifications/verify', controller.verifyDocument);
+router.get('/rides',           controller.getAllRides);
+router.get('/rides/:id',       controller.getRideDetails);
+router.put('/rides/:id/cancel',controller.cancelRide);
+router.get('/bookings',        controller.getAllBookings);
+router.get('/reports/revenue',        controller.getRevenueReport);
+router.get('/reports/popular-routes', controller.getPopularRoutes);
+router.get('/settings',      controller.getAllSettings);
+router.post('/settings',     controller.setSetting);
+router.get('/settings/:key', controller.getSetting);
+module.exports = router;

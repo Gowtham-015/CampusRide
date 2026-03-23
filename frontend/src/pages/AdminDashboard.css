@@ -1,0 +1,118 @@
+.admin-dash { max-width: 1100px; margin: 0 auto; padding: 40px 24px 100px; }
+
+.admin-header { margin-bottom: 24px; }
+
+/* Tabs */
+.admin-tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.admin-tab {
+  padding: 10px 18px; border-radius: 8px 8px 0 0;
+  border: 1px solid transparent; border-bottom: none;
+  background: transparent; color: var(--text2);
+  font-size: 13.5px; font-weight: 600; cursor: pointer;
+  transition: all 0.18s; font-family: var(--font-body);
+  margin-bottom: -1px;
+}
+.admin-tab:hover { color: var(--text); background: var(--surface2); }
+.admin-tab.active {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--accent);
+}
+
+.admin-loading { text-align: center; padding: 40px; color: var(--text2); font-size: 14px; }
+
+/* Overview grid */
+.ao-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.ao-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 20px;
+  text-align: center; transition: border-color 0.18s;
+}
+.ao-card:hover { border-color: var(--border2); }
+.ao-icon  { font-size: 26px; margin-bottom: 8px; }
+.ao-value { font-family: var(--font-display); font-size: 30px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.ao-label { font-size: 12px; color: var(--text2); font-weight: 500; }
+
+/* Section */
+.admin-section { padding: 8px 0; }
+.admin-search  { max-width: 360px; }
+
+/* Table */
+.admin-table-wrap { overflow-x: auto; border-radius: var(--radius-xl); border: 1px solid var(--border); }
+.admin-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px;
+}
+.admin-table th {
+  background: var(--surface2); color: var(--text2);
+  font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px;
+  text-transform: uppercase; padding: 12px 16px;
+  text-align: left; border-bottom: 1px solid var(--border);
+}
+.admin-table td {
+  padding: 13px 16px; border-bottom: 1px solid var(--border);
+  color: var(--text2); vertical-align: middle;
+}
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: var(--surface2); }
+
+/* Role badges */
+.role-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 700; text-transform: capitalize;
+}
+.role-provider { background: rgba(108,99,255,0.15); color: #a0a0ff; }
+.role-seeker   { background: rgba(45,212,160,0.12); color: #2dd4a0; }
+.role-both     { background: rgba(245,166,35,0.12); color: var(--accent); }
+.role-admin    { background: rgba(224,85,85,0.12);  color: var(--red); }
+
+/* Status badges */
+.status-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 700; text-transform: capitalize;
+}
+.status-active      { background: rgba(79,163,224,0.15); color: #4fa3e0; }
+.status-completed   { background: rgba(45,212,160,0.12); color: #2dd4a0; }
+.status-cancelled   { background: rgba(224,85,85,0.10);  color: var(--red); }
+.status-in-progress { background: rgba(245,166,35,0.12); color: var(--accent); }
+.status-pending     { background: rgba(245,166,35,0.12); color: var(--accent); }
+.status-accepted    { background: rgba(45,212,160,0.12); color: #2dd4a0; }
+.status-rejected    { background: rgba(224,85,85,0.10);  color: var(--red); }
+
+/* KYC Review cards */
+.kyc-review-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 24px;
+  margin-bottom: 16px; transition: border-color 0.18s;
+}
+.kyc-review-card:hover { border-color: var(--border2); }
+.kyc-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* KYC status badges */
+.kyc-status-badge {
+  display: inline-block; padding: 4px 14px; border-radius: 100px;
+  font-size: 11px; font-weight: 700;
+}
+.kyc-pending  { background: rgba(245,166,35,0.12); color: var(--accent); }
+.kyc-approved { background: rgba(45,212,160,0.12); color: #2dd4a0; }
+.kyc-rejected { background: rgba(224,85,85,0.10);  color: var(--red); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ao-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-tabs { gap: 4px; }
+  .admin-tab { padding: 8px 12px; font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .ao-grid { grid-template-columns: 1fr 1fr; }
+}
