@@ -1,0 +1,129 @@
+/* ══════════════════════════════════════
+   SHARED AUTH LAYOUT
+══════════════════════════════════════ */
+.auth-shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ── Brand panel (left) ── */
+.auth-brand-panel {
+  position: relative; overflow: hidden;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  padding: 64px 56px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.abp-inner { position: relative; z-index: 2; }
+.abp-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 45%, rgba(245,166,35,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(232,85,46,0.07) 0%, transparent 45%);
+}
+.abp-logo {
+  font-family: var(--font-display); font-size: 21px; font-weight: 800;
+  letter-spacing: -0.5px; margin-bottom: 44px; color: var(--text);
+}
+.abp-logo span { color: var(--accent); }
+.abp-headline { font-size: 50px; margin-bottom: 20px; color: var(--text); }
+.abp-headline em { font-style: normal; color: var(--accent); }
+.abp-sub { font-size: 15px; color: var(--text2); line-height: 1.65; max-width: 360px; margin-bottom: 44px; }
+
+.abp-stats { display: flex; gap: 36px; margin-bottom: 36px; }
+.abp-stat-n { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--accent); }
+.abp-stat-l { font-size: 11.5px; color: var(--text2); margin-top: 3px; }
+
+.abp-features { display: flex; flex-direction: column; gap: 10px; }
+.abp-feature  { font-size: 13.5px; color: var(--text2); }
+
+.abp-steps { display: flex; flex-direction: column; gap: 18px; }
+.abp-step  { display: flex; align-items: center; gap: 14px; }
+.abp-step-n {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: var(--accent); color: #000;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 13px; font-weight: 800;
+}
+
+/* ── Form panel (right) ── */
+.auth-form-panel {
+  background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px 44px;
+  overflow-y: auto;
+}
+.auth-form { width: 100%; max-width: 420px; }
+.af-header { margin-bottom: 28px; }
+
+/* ── Field label row (label + forgot link side by side) ── */
+.field-label-row {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.field-label-row label { margin-bottom: 0 !important; }
+
+/* ── Show password button ── */
+.input-with-toggle { padding-right: 46px; }
+.show-pass-btn {
+  position: absolute; right: 12px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none;
+  font-size: 16px; cursor: pointer;
+  color: var(--text3); padding: 4px;
+  transition: color 0.15s; line-height: 1;
+  display: flex; align-items: center;
+}
+.show-pass-btn:hover { color: var(--text2); }
+
+/* ── Password match messages ── */
+.field-error-msg {
+  font-size: 12px; color: var(--red);
+  margin-top: 6px; display: flex; align-items: center; gap: 4px;
+}
+.field-success-msg {
+  font-size: 12px; color: var(--green);
+  margin-top: 6px; display: flex; align-items: center; gap: 4px;
+}
+
+/* ── Back button ── */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--text2); cursor: pointer;
+  background: none; border: none; padding: 0;
+  font-family: var(--font-body); font-weight: 500;
+  transition: color 0.15s;
+}
+.back-btn:hover { color: var(--accent); }
+
+/* ── Role cards ── */
+.role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.role-card {
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  padding: 15px 8px; border-radius: var(--radius);
+  background: var(--surface2); border: 1.5px solid var(--border);
+  cursor: pointer; transition: all 0.18s; text-align: center;
+}
+.role-card:hover { border-color: var(--border2); }
+.role-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+.rc-r-icon  { font-size: 22px; }
+.rc-r-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--text); }
+.rc-r-desc  { font-size: 11px; color: var(--text2); }
+
+/* ── Link btn ── */
+.link-btn {
+  background: none; border: none; color: var(--accent);
+  font-family: inherit; font-size: inherit; font-weight: 600;
+  cursor: pointer; padding: 0;
+}
+.link-btn:hover { text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 820px) {
+  .auth-shell { grid-template-columns: 1fr; }
+  .auth-brand-panel { display: none; }
+  .auth-form-panel { padding: 40px 24px; }
+  .role-grid { grid-template-columns: 1fr; }
+}

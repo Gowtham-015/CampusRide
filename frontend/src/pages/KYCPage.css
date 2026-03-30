@@ -1,0 +1,71 @@
+.kyc-wrap { max-width: 700px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.kyc-steps {
+  display: flex; align-items: center; gap: 0;
+}
+.kyc-step {
+  display: flex; align-items: center; gap: 10px; flex: 1;
+}
+.kyc-step-num {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--bg2); border: 2px solid var(--border);
+  color: var(--text2); font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); transition: all 0.2s;
+}
+.kyc-step.active .kyc-step-num { background: var(--accent); border-color: var(--accent); color: #000; }
+.kyc-step.done .kyc-step-num   { background: var(--green);  border-color: var(--green);  color: #000; }
+.kyc-step-label { font-size: 13px; font-weight: 600; color: var(--text2); white-space: nowrap; }
+.kyc-step.active .kyc-step-label { color: var(--text); }
+.kyc-step-line { flex: 1; height: 2px; background: var(--border); margin: 0 8px; }
+
+.kyc-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 36px;
+}
+
+.kyc-upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.kyc-upload-box  { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.kyc-upload-label {
+  width: 100%; min-height: 160px; border-radius: 14px;
+  border: 2px dashed var(--border); background: var(--bg2);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 8px; cursor: pointer;
+  transition: border-color 0.2s; padding: 20px; text-align: center;
+}
+.kyc-upload-label:hover { border-color: var(--accent); }
+.kyc-upload-icon { font-size: 32px; font-weight: 800; color: var(--accent); font-family: var(--font-display); }
+.kyc-upload-text { font-size: 13px; font-weight: 600; color: var(--text); }
+.kyc-upload-sub  { font-size: 11px; color: var(--text3); }
+.kyc-preview-img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; }
+.kyc-check { font-size: 12px; color: var(--green); font-weight: 600; }
+
+.kyc-selfie-box { display: flex; justify-content: center; }
+.kyc-selfie-label { width: 280px; height: 280px; border-radius: 50% !important; }
+.kyc-selfie-img   { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+.kyc-tips { display: flex; flex-direction: column; gap: 8px; }
+.kyc-tip  { font-size: 13px; color: var(--text2); }
+
+.kyc-review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.kyc-review-item { display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; }
+.kyc-review-label { font-size: 12px; font-weight: 600; color: var(--text2); }
+.kyc-review-img   { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; }
+
+.kyc-success {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 60px 40px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+}
+.kyc-success-icon { font-size: 64px; }
+.kyc-status-badge {
+  padding: 10px 24px; border-radius: 100px;
+  background: rgba(245,166,35,0.15); color: var(--accent);
+  font-size: 14px; font-weight: 700; border: 1px solid rgba(245,166,35,0.3);
+}
+
+@media (max-width: 600px) {
+  .kyc-upload-grid { grid-template-columns: 1fr; }
+  .kyc-review-grid { grid-template-columns: 1fr; }
+  .kyc-selfie-label { width: 200px; height: 200px; }
+}
