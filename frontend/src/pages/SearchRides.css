@@ -1,0 +1,17 @@
+.search-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 14px; margin-bottom: 16px;
+}
+.search-actions {
+  display: flex; align-items: center; gap: 12px; justify-content: flex-end;
+}
+.rides-stack { display: flex; flex-direction: column; gap: 14px; }
+
+@media (max-width: 768px) {
+  .search-grid { grid-template-columns: 1fr 1fr; }
+  .search-actions { justify-content: stretch; flex-direction: column; }
+  .search-actions .btn { width: 100%; }
+}
+@media (max-width: 480px) {
+  .search-grid { grid-template-columns: 1fr; }
+}
